@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Calculadora UPS</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            background-color: #e3f2fd;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            color: #212121;
+        }
+
+        .container {
+            background-color: #ffffff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            width: 90%;
+            max-width: 750px;
+            box-sizing: border-box;
+        }
+
+        h2 {
+            text-align: center;
+            color: #0d47a1;
+            margin-top: 0;
+        }
+        
+        h3 {
+            text-align: center;
+            color: #1976d2;
+        }
+
+        .servicos-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 15px;
+        }
+
+        .servico-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 10px;
+            border: 1px solid #bbdefb;
+            border-radius: 5px;
+            text-align: center;
+        }
+
+        .servico-item label {
+            flex-grow: 1;
+            font-size: 12px;
+            margin-bottom: 5px;
+        }
+
+        .servico-item input[type="number"] {
+            width: 60px;
+            padding: 8px;
+            border: 1px solid #90caf9;
+            border-radius: 5px;
+            text-align: center;
+            font-size: 14px;
+        }
+
+        button {
+            width: 100%;
+            padding: 12px;
+            background-color: #1565c0;
+            color: #ffffff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: bold;
+            transition: background-color 0.3s ease;
+            margin-top: 20px;
+        }
+
+        button:hover {
+            background-color: #0d47a1;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Calculadora UPS</h2>
+        <h3>Informe a quantidade de serviços:</h3>
+        
+        <div class="servicos-grid">
+            <div class="servico-item">
+                <label for="servico1">RELIGAÇÃO COM REPOSIÇÃO DE RAMAL:</label>
+                <input type="number" id="servico1" data-pontos="3.47" value="0" min="0">
+            </div>
+            <div class="servico-item">
+                <label for="servico2">RELIGAÇÃO IMPRODUTIVA:</label>
+                <input type="number" id="servico2" data-pontos="1.37" value="0" min="0">
+            </div>
+            <div class="servico-item">
+                <label for="servico3">RELIGAÇÃO NO MEDIDOR:</label>
+                <input type="number" id="servico3" data-pontos="1.77" value="0" min="0">
+            </div>
+            <div class="servico-item">
+                <label for="servico4">RELIGAÇÃO NO POSTE:</label>
+                <input type="number" id="servico4" data-pontos="2.57" value="0" min="0">
+            </div>
+            <div class="servico-item">
+                <label for="servico5">COLETA DE DADOS GERAIS:</label>
+                <input type="number" id="servico5" data-pontos="2.2" value="0" min="0">
+            </div>
+            <div class="servico-item">
+                <label for="servico6">DESLIGAMENTO DE UC:</label>
+                <input type="number" id="servico6" data-pontos="2.33" value="0" min="0">
+            </div>
+            <div class="servico-item">
+                <label for="servico7">DESLOCAMENTO DE RAMAL:</label>
+                <input type="number" id="servico7" data-pontos="3.43" value="0" min="0">
+            </div>
+            <div class="servico-item">
+                <label for="servico8">LIGAÇÃO PROVISÓRIA:</label>
+                <input type="number" id="servico8" data-pontos="3.93" value="0" min="0">
+            </div>
+            <div class="servico-item">
+                <label for="servico9">LN COM MONTAGEM DE PADRÃO:</label>
+                <input type="number" id="servico9" data-pontos="5.43" value="0" min="0">
+            </div>
+            <div class="servico-item">
+                <label for="servico10">LN SEM MONTAGEM DE PADRÃO:</label>
+                <input type="number" id="servico10" data-pontos="3.63" value="0" min="0">
+            </div>
+            <div class="servico-item">
+                <label for="servico11">MUDANÇA DE MEDIDOR:</label>
+                <input type="number" id="servico11" data-pontos="4.33" value="0" min="0">
+            </div>
+            <div class="servico-item">
+                <label for="servico12">SERVIÇO IMPRODUTIVO:</label>
+                <input type="number" id="servico12" data-pontos="1.73" value="0" min="0">
+            </div>
+            <div class="servico-item">
+                <label for="servico13">TROCA DE PADRÃO COM AUMENTO DE CARGA:</label>
+                <input type="number" id="servico13" data-pontos="4.93" value="0" min="0">
+            </div>
+            <div class="servico-item">
+                <label for="servico14">TROCA DE PADRÃO SEM AUMENTO DE CARGA:</label>
+                <input type="number" id="servico14" data-pontos="4.33" value="0" min="0">
+            </div>
+            <div class="servico-item">
+                <label for="servico15">EMERGÊNCIAL INDIVIDUAL:</label>
+                <input type="number" id="servico15" data-pontos="5.4" value="0" min="0">
+            </div>
+            <div class="servico-item">
+                <label for="servico16">DÉBITO PAGO:</label>
+                <input type="number" id="servico16" data-pontos="1.98" value="0" min="0">
+            </div>
+            <div class="servico-item">
+                <label for="servico17">EMERGENCIA COLETIVA AL:</label>
+                <input type="number" id="servico17" data-pontos="18.2" value="0" min="0">
+            </div>
+            <div class="servico-item">
+                <label for="servico18">EMERGENCIA COLETIVA BT:</label>
+                <input type="number" id="servico18" data-pontos="9.8" value="0" min="0">
+            </div>
+            <div class="servico-item">
+                <label for="servico19">EMERGENCIA COLETIVA MT:</label>
+                <input type="number" id="servico19" data-pontos="11.3" value="0" min="0">
+            </div>
+            <div class="servico-item">
+                <label for="servico20">EMERGENCIA IMPRODUTIVA:</label>
+                <input type="number" id="servico20" data-pontos="3.4" value="0" min="0">
+            </div>
+            <div class="servico-item">
+                <label for="servico21">EMERGENCIA INDIVIDUAL:</label>
+                <input type="number" id="servico21" data-pontos="5.2" value="0" min="0">
+            </div>
+            <div class="servico-item">
+                <label for="servico22">INSTALAÇÃO DE ANALISADOR DE QUALIDADE:</label>
+                <input type="number" id="servico22" data-pontos="4.8" value="0" min="0">
+            </div>
+            <div class="servico-item">
+                <label for="servico23">INSTALAÇÃO DE PARA RAIOS:</label>
+                <input type="number" id="servico23" data-pontos="5.2" value="0" min="0">
+            </div>
+            <div class="servico-item">
+                <label for="servico24">NIVEL DE TENSAO:</label>
+                <input type="number" id="servico24" data-pontos="5.2" value="0" min="0">
+            </div>
+            <div class="servico-item">
+                <label for="servico25">RETIRADA DE ANALISADOR DE QUALIDADE:</label>
+                <input type="number" id="servico25" data-pontos="4.6" value="0" min="0">
+            </div>
+        </div>
+
+        <button onclick="calcular()">Calcular Pontuação UPS</button>
+        <h3 id="resultado">Pontuação Total: 0</h3>
+    </div>
+
+    <script>
+        function calcular() {
+            let total = 0;
+            const servicos = document.querySelectorAll('input[type="number"]');
+            servicos.forEach(servico => {
+                const quantidade = parseInt(servico.value) || 0;
+                const pontos = parseFloat(servico.getAttribute('data-pontos'));
+                total += quantidade * pontos;
+            });
+
+            const resultadoElemento = document.getElementById('resultado');
+
+            if (total >= 42) {
+                resultadoElemento.style.color = 'green';
+                resultadoElemento.innerText = `Parabéns! Você atingiu a meta de UPS diária (Pontuação: ${total.toFixed(2)})`;
+            } else {
+                resultadoElemento.style.color = 'red';
+                resultadoElemento.innerText = `No momento você está abaixo da meta diária (Pontuação: ${total.toFixed(2)})`;
+            }
+        }
+    </script>
+</body>
+</html>
