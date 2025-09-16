@@ -20,28 +20,16 @@
             border-radius: 10px;
             box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
             width: 90%;
-            max-width: 600px;
+            max-width: 600px; /* Reduzido para o novo layout */
             box-sizing: border-box;
         }
 
-        .header-logo {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-bottom: 20px;
-        }
-
-        .header-logo img {
-            height: 40px;
-            margin-right: 15px;
-        }
-
-        .header-logo h2 {
+        h2 {
             text-align: center;
             color: #0d47a1;
-            margin: 0;
+            margin-top: 0;
         }
-
+        
         h3 {
             text-align: center;
             color: #1976d2;
@@ -118,42 +106,46 @@
 </head>
 <body>
     <div class="container">
-        <div class="header-logo">
-            <img src="logo-eq.png" alt="Logo Equatorial">
-            <h2>Calculadora UPS</h2>
-        </div>
-        
+        <h2>Calculadora UPS</h2>
         <h3>Informe a quantidade de serviços:</h3>
         
         <div class="input-group">
             <label for="servico">Selecione o Serviço:</label>
             <select id="servico">
                 <option value="" disabled selected>Escolha um serviço...</option>
-                <option value="3.47">RELIGAÇÃO COM REPOSIÇÃO DE RAMAL</option>
-                <option value="1.37">RELIGAÇÃO IMPRODUTIVA</option>
-                <option value="1.77">RELIGAÇÃO NO MEDIDOR</option>
-                <option value="2.57">RELIGAÇÃO NO POSTE</option>
+                <option value="4.6">RELIGACAO COM REPOSICAO DE RAMAL</option>
+                <option value="2.5">RELIGACAO IMPRODUTIVA</option>
+                <option value="2.9">RELIGACAO NO MEDIDOR</option>
+                <option value="3.7">RELIGACAO NO POSTE</option>
                 <option value="2.2">COLETA DE DADOS GERAIS</option>
-                <option value="2.33">DESLIGAMENTO DE UC</option>
-                <option value="3.43">DESLOCAMENTO DE RAMAL</option>
-                <option value="3.93">LIGAÇÃO PROVISÓRIA</option>
-                <option value="5.43">LN COM MONTAGEM DE PADRÃO</option>
-                <option value="3.63">LN SEM MONTAGEM DE PADRÃO</option>
-                <option value="4.33">MUDANÇA DE MEDIDOR</option>
-                <option value="1.73">SERVIÇO IMPRODUTIVO</option>
-                <option value="4.9">TROCA DE PADRÃO COM AUMENTO DE CARGA</option>
-                <option value="4.33">TROCA DE PADRÃO SEM AUMENTO DE CARGA</option>
-                <option value="5.4">EMERGÊNCIAL INDIVIDUAL</option>
-                <option value="1.98">DÉBITO PAGO</option>
-                <option value="18.2">EMERGENCIA COLETIVA AL</option>
-                <option value="9.8">EMERGENCIA COLETIVA BT</option>
-                <option value="11.3">EMERGENCIA COLETIVA MT</option>
-                <option value="3.4">EMERGENCIA IMPRODUTIVA</option>
-                <option value="5.2">EMERGENCIA INDIVIDUAL</option>
-                <option value="4.8">INSTALAÇÃO DE ANALISADOR DE QUALIDADE</option>
-                <option value="5.2">INSTALAÇÃO DE PARA RAIO</option>
-                <option value="5.2">NIVEL DE TENSAO</option>
-                <option value="4.6">RETIRADA DE ANALISADOR DE QUALIDADE</option>
+                <option value="3.8">DESLIGAMENTO DE UC</option>
+                <option value="4.9">DESLOCAMENTO DE RAMAL</option>
+                <option value="5.4">LIGACAO PROVISORIA</option>
+                <option value="6.9">LN COM MONTAGEM DE PADRAO</option>
+                <option value="5.1">LN SEM MONTAGEM DE PADRAO</option>
+                <option value="5.8">MUDANCA DE MEDIDOR</option>
+                <option value="3.2">SERVICO IMPRODUTIVO</option>
+                <option value="6.4">TROCA DE PADRAO COM AUMENTO DE CARGA</option>
+                <option value="5.8">TROCA DE PADRAO SEM AUMENTO DE CARGA</option>
+                <option value="18.1">EMERGENCIA COLETIVA AL</option>
+                <option value="9.7">EMERGENCIA COLETIVA BT</option>
+                <option value="11.2">EMERGENCIA COLETIVA MT</option>
+                <option value="3.3">EMERGENCIA IMPRODUTIVA</option>
+                <option value="5.1">EMERGENCIA INDIVIDUAL</option>
+                <option value="4.7">INSTALACAO DE ANALISADOR DE QUALIDADE</option>
+                <option value="5.1">INSTALACAO DE PARA RAIO</option>
+                <option value="5.1">NIVEL DE TENSAO</option>
+                <option value="4.5">RETIRADA DE ANALISADOR DE QUALIDADE</option>
+                <option value="0.4">CORTE BOT IMPRODUTIVO</option>
+                <option value="0.8">CORTE BOT NO MEDIDOR</option>
+                <option value="1.6">CORTE BOT NO POSTE</option>
+                <option value="2.4">CORTE BOT RAMAL RETIRADO</option>
+                <option value="1.3">CORTE IMPRODUTIVO</option>
+                <option value="1.7">CORTE NO DISJUNTOR</option>
+                <option value="1.7">CORTE NO MEDIDOR</option>
+                <option value="2.5">CORTE NO POSTE</option>
+                <option value="1.7">RECORTE</option>
+                <option value="2.5">DEBITO PAGO</option>
             </select>
 
             <label for="quantidade">Quantidade:</label>
@@ -195,8 +187,8 @@
             novoItem.textContent = `${nomeServico}: ${quantidade} x ${pontos.toFixed(2)} = ${subtotal.toFixed(2)}`;
             listaServicos.appendChild(novoItem);
             
-            quantidadeInput.value = 1;
-            servicoSelect.value = "";
+            quantidadeInput.value = 1; // Reseta a quantidade para 1
+            servicoSelect.value = ""; // Reseta a seleção do dropdown
 
             atualizarResultado();
         }
@@ -221,6 +213,7 @@
             document.getElementById('quantidade').value = 1;
         }
 
+        // Inicializa a cor do resultado ao carregar a página
         document.addEventListener('DOMContentLoaded', () => {
             atualizarResultado();
         });
